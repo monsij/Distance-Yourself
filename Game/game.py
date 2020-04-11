@@ -56,8 +56,8 @@ def showMenu():
     buttons.add(plat)
 
     pygame.draw.rect(win, (210, 252, 221), (0,0,screen_width, screen_height))
-    background = pygame.transform.scale(bg, (1024, 576))
-    win.blit(background, (0,50))
+    background = pygame.transform.scale(bg, (569, 512))
+    win.blit(background, (-200,10))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -82,23 +82,16 @@ def showInstructions():
     global run
     global game
     buttons = pygame.sprite.Group()
-    text = Button(20, screen_height//2 -200, pygame.image.load('text.png'))
-    back = Button(screen_width//2 - 110, screen_height - 130, pygame.image.load('back.png'))
-    example = Button(screen_width - 400, 100, pygame.image.load("R5.png"))
-    example2 = Button(screen_width - 300, 250, pygame.image.load("R9E.png"))
-    example3 = Button(screen_width - 500, 300, pygame.image.load("R3E.png"))
+    text = Button(5, 10, pygame.image.load('text.png'))
+    back = Button(screen_width//2 - 110, screen_height - 150, pygame.image.load('back.png'))
     plat = Platform(0, screen_height - 40, screen_width, 40, 'GROUND')
     buttons.add(text)
     buttons.add(back)
     buttons.add(plat)
 
-    buttons.add(example)
-    buttons.add(example2)
-    buttons.add(example3)
-
     pygame.draw.rect(win, (210, 252, 221), (0,0,screen_width, screen_height))
-    background = pygame.transform.scale(bg, (1024, 576))
-    win.blit(background, (0,50))
+    background = pygame.transform.scale(bg, (569, 512))
+    win.blit(background, (-200,10))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -166,8 +159,8 @@ def redrawGameWindow():
 
     #need to fill every time so it doesn't streak across the screen
     pygame.draw.rect(win, (210, 252, 221), (0,0,screen_width, screen_height))
-    background = pygame.transform.scale(bg, (1024, 576))
-    win.blit(background, (0,50))
+    background = pygame.transform.scale(bg, (569, 512))
+    win.blit(background, (-200,10))
 
     #check for collisions
     hit = pygame.sprite.spritecollide(player, enemies, False, pygame.sprite.collide_rect)
