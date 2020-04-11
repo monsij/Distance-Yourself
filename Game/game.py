@@ -301,7 +301,6 @@ def gameOver():
     global game
     player.health = 50
     global score
-    score = 0
     global time
     time = 0
     global started
