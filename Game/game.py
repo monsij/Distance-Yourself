@@ -23,6 +23,8 @@ score = 0
 
 started = True
 
+overTick = 0
+
 myfont = pygame.font.SysFont('Monserrat', 30)
 
 def scrollCheck():
@@ -43,6 +45,8 @@ def showMenu():
     global time
     time = 0
     global started
+    global overTick
+    overTick = 0
     started = True
 
     buttons = pygame.sprite.Group()
@@ -294,7 +298,7 @@ def checkHealth():
     if player.health <= 0:
         game = "OVER"
 
-overTick = 0
+
 messages = pygame.sprite.Group()
 over = Button(screen_width//2-100, screen_height//2+100, pygame.image.load('over.png'))
 messages.add(over)
