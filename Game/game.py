@@ -279,6 +279,8 @@ def spawn():
         end = screen_width
         if x + 30 < screen_width - 128:
             end = random.randrange(x + 30, screen_width - 128)
+        elif x + 30 < screen_width - 128:
+            end = random.randrange(x + 20, screen_width - 128)
         else:
             end = random.randrange(screen_width-128, x + 30)
         e = Enemy(x,y,end)
