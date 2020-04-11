@@ -8,7 +8,7 @@ pygame.font.init()
 
 
 
-pygame.display.set_caption("First Game")
+pygame.display.set_caption("Distance Yourself")
 bg = pygame.image.load('background.png')
 
 clock = pygame.time.Clock()
