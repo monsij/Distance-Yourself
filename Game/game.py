@@ -6,7 +6,8 @@ from attributes import *
 pygame.init()
 pygame.font.init()
 
-
+pygame.mixer.music.load('music.mp3')
+pygame.mixer.music.play(-1)
 
 pygame.display.set_caption("Distance Yourself")
 bg = pygame.image.load('background.png')
@@ -37,6 +38,7 @@ def scrollCheck():
                 plat.kill()
 
 def showMenu():
+
     global run
     global game
     player.health = 50
@@ -116,6 +118,11 @@ def showInstructions():
 
 
 def redrawGameWindow():
+    #pygame.mixer.Sound.play(game_sound)
+    #pygame.mixer.music.stop()
+    pygame.mixer.music.stop()
+    pygame.mixer.music.load('music.mp3')
+    pygame.mixer.music.play(-1)
     global started
     if started:
         #restart by emptying out sprite groups and adding the starters
@@ -270,6 +277,7 @@ all_sprites.add(plat4)
 platforms.add(plat4)
 
 def spawn():
+
     while len(platforms) < 6:
         tall = player.height
         width = random.randrange(70, screen_width//2+100)
@@ -336,17 +344,8 @@ def gameOver():
 
 
 
-
-
-
-
-
-
-
-
 while run:
     clock.tick(27)
-
     if game == "ON":
         redrawGameWindow()
     elif game == "OVER":
